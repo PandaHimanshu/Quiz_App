@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    font-family: "Roboto", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    max-width: 500px;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px gray;
+    padding: 20px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.options {
+    padding: 12px 10px;
+    font-size: clamp(18px, 22px, 24px);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: capitalize;
+    text-wrap: wrap;
+    cursor: pointer;
+}
+.options:hover{
+    background : rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.wrapper :not(.options:nth-child(n+3)) {
+    margin: auto 0;
+}
+
+.wrapper .options:nth-child(n+3) {
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .wrapper .options:nth-child(n+3) {
+        margin: 0;
+
+    }
+
+    .wrapper :not(.options:nth-child(n+3)) {
+        height: 100%;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+}
+
+button {
+    height: 40px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: rgb(88, 233, 88);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:last-child {
+    background-color: rgb(247, 94, 94);
+}
+
+.card {
+    background-color: #ffffff;
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+button:first-child:active{
+    background-color: rgb(15, 154, 15);
+}
+button:last-child:active{
+    background-color: rgb(180, 34, 34);
+}
+p{
+    margin: 10px;
+    font-size: 18px;
+    color: rgb(90, 90, 241);
+}
